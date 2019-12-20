@@ -45,4 +45,12 @@ class LinkedList:
 
     def reverse_list(self):
         # TO BE COMPLETED
+        current = self.head
+        prev_val = None
 
+        while current is not None:
+            next_val = current.next_node
+            current.next_node = prev_val
+            prev_val = current
+            current = next_val
+        self.head = prev_val
